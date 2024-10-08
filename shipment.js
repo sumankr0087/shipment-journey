@@ -8,16 +8,14 @@ let startCoordinates = [19.0760, 72.8777];
 let currentCoordinates = [-36.802237, 12.913736]; 
 let endCoordinates = [40.7128, -74.0060];
 
-
-let startMarker = L.marker(startCoordinates).addTo(map).bindPopup("Start: Mumbai").openPopup();
-let currentMarker = L.marker(currentCoordinates).addTo(map).bindPopup("Current Location").openPopup();
-let endMarker = L.marker(endCoordinates).addTo(map).bindPopup("End: New York").openPopup();
-
+let startMarker = L.marker(startCoordinates).addTo(map);
+let currentMarker = L.marker(currentCoordinates).addTo(map);
+let endMarker = L.marker(endCoordinates).addTo(map);
 
 let journeyLine = L.polyline([startCoordinates, currentCoordinates, endCoordinates], {
     color: 'blue',
     weight: 2,
-    dashArray: '5, 5',
+    dashArray: '5, 5', 
 }).addTo(map);
 
 map.fitBounds(journeyLine.getBounds());
